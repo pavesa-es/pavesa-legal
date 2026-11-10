@@ -35,63 +35,29 @@ footer a{color:var(--muted)}
 <main>
 <h1>Brío — Privacy Policy / Política de privacidad</h1>
 <div class="top"><a href="#en">English</a><a href="#es">Español</a></div>
-<p><em>Last updated / Última actualización: 2026-11-10</em></p>
+<p><em>Last updated / Última actualización: 2026-11-08</em></p>
 <hr>
 <h2 id="en" lang="en">English</h2>
 <p><strong>Brío</strong> ("the app") is developed by Pavesa ("I", "me", "we"). This policy explains what the app does with your information.</p>
 <h3>In short</h3>
-<p>Brío works offline and everything you write stays on your device. There are no ads, no analytics and no third-party trackers, and your data is never sold. Two features are optional and only work if you <strong>sign in with Google</strong>:</p>
-<ul>
-<li><strong>Sync</strong>: a copy of your data in a hidden folder of <strong>your own Google Drive</strong>.</li>
-<li><strong>Fires and duels</strong> (shared challenges with friends): a small amount of data on my server so the people in a fire can see whether each other did their day.</li>
-</ul>
-<p>Without signing in, nothing leaves your device.</p>
+<p>Brío works offline. It does <strong>not</strong> collect, sell or share your personal data with me or anyone else. There are no ads, no analytics and no third-party trackers. The only optional online feature is syncing through your own Google Drive (see below).</p>
 <h3>What stays on your device</h3>
-<p>Everything you enter — your name and avatar, challenges, tasks, daily logs, notes, mood, focus sessions, achievements, rewards and settings — is stored in the app's private storage on your device. Notes, mood and focus sessions are <strong>never</strong> sent to my server.</p>
+<p>Everything you enter — your name and avatar, challenges, tasks, daily logs, notes, mood, focus sessions, achievements and settings — is stored <strong>only on your device</strong>, in the app's private storage. I never receive it.</p>
 <h3>Optional: Google sign-in and Drive sync</h3>
-<p>If you choose <strong>Sign in with Google</strong> (Settings → Account &amp; sync), the app asks Google for your name, email, profile photo and access to a hidden, app-only folder in <strong>your own Google Drive</strong> (permission <code>drive.appdata</code>). It keeps a copy of your challenges, logs, profile, achievements and rewards there so your data stays in sync across your devices. That copy lives in your Google account, not on my server, and I cannot see it. No other Drive files are accessible.</p>
-<p>Brío's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. It is used only to provide sign-in, sync and fires; it is never used for advertising, never sold and never shared beyond the service providers listed below.</p>
-<h3>Optional: fires and duels (shared challenges)</h3>
-<p>When you create or join a fire or a duel, the app opens an account on my server using your Google sign-in and stores:</p>
-<ul>
-<li><strong>Account</strong>: an internal user id plus the email, name and profile photo link that Google provides when you sign in. Other people <strong>never</strong> see them.</li>
-<li><strong>Nickname</strong>: a random one from a fixed word list (for example "Brave Ember 42"). It is the only thing other members see about you.</li>
-<li><strong>The shared challenge</strong>: its title, emoji, colour, duration, schedule and task names, so others can join it.</li>
-<li><strong>Daily check-ins</strong> for that challenge only: the date, whether you completed the day, how many tasks you did out of how many, and whether an ember shield covered it.</li>
-<li><strong>Interactions</strong>: pokes and sticker stamps you send or receive, and the people you block or report (with the reason you choose).</li>
-<li><strong>For notifications</strong>: your device's push token, time zone and app language, so pokes and "your fire is lit" alerts arrive at sensible hours and in your language.</li>
-</ul>
-<p>Other members of a fire see your nickname and your check-ins for that fire, nothing else.</p>
-<h3>Notifications</h3>
-<p>Daily reminders are scheduled locally on your device. If you are in a fire or a duel, my server can also send you a push notification (a poke, or when others in your fire have lit it). Push notifications are delivered through Expo's push service and Google Firebase Cloud Messaging; they only carry the fire's title and a short message.</p>
-<h3>Service providers and where data is stored</h3>
-<ul>
-<li><strong>Supabase</strong> (database and sign-in for fires and duels), hosted in the <strong>European Union (Ireland)</strong>.</li>
-<li><strong>Expo</strong> (push notification delivery).</li>
-<li><strong>Google</strong> (sign-in, your own Drive, push delivery on Android).</li>
-</ul>
-<p>They process data only on my behalf to run these features. Data is always encrypted in transit (HTTPS).</p>
-<h3>How long data is kept</h3>
-<p>Data on my server is kept while your account exists. Leaving a fire stops sharing new check-ins; past check-ins remain visible to that fire. When you delete your account, everything linked to it is deleted (see below). Reports you made are deleted; reports others made about you are kept without any link to you, only to prevent abuse.</p>
+<p>If you choose <strong>Sign in with Google</strong> (Settings → Account &amp; sync), the app asks Google for access to a hidden, app-only folder in <strong>your own Google Drive</strong> (permission <code>drive.appdata</code>) and keeps a copy of your challenges, logs, profile, achievements and rewards there so your data stays in sync across your devices. That copy lives in your Google account, not on any server of mine; I cannot see it. The app only sees your Google account's name and email to show who is signed in. No other Drive files are accessible. You can <strong>Sign out</strong> or <strong>Delete cloud data</strong> at any time in Settings; you can also revoke access from your Google Account settings. Without signing in, nothing leaves your device.</p>
+<p>Brío's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. The data is used only to provide the sync feature; it is never used for advertising, never sold and never shared with third parties.</p>
 <h3>Permissions</h3>
 <ul>
-<li><strong>Notifications</strong> (Android 13+: <code>POST_NOTIFICATIONS</code>): reminders and, if you are in a fire, pokes. You can deny it and the rest of the app keeps working.</li>
-<li><strong>Vibration</strong> (<code>VIBRATE</code>): haptic feedback. You can turn it off in Settings.</li>
-<li><strong>Internet</strong>: sync, fires and duels.</li>
+<li><strong>Notifications</strong> (Android 13+: <code>POST_NOTIFICATIONS</code>): used only to show the daily reminders you configure. They are scheduled locally on your device; no server is involved. You can deny this permission and the rest of the app keeps working.</li>
+<li><strong>Vibration</strong> (<code>VIBRATE</code>): used for haptic feedback. You can turn it off in Settings.</li>
 </ul>
 <h3>Backups and exports</h3>
-<p>You can export your data to a file and import it again from Settings. The export is created on your device and handed to the app you choose in the share sheet; from that point it is governed by that app's privacy policy. Android may also include the app's data in your device's automatic backup to your Google account, managed by Google.</p>
-<h3>Deleting your data and your account</h3>
-<ul>
-<li><strong>Everything on this device</strong>: Settings → Delete everything, or uninstall the app.</li>
-<li><strong>Your account</strong> (Drive copy, fires, duels, nickname, check-ins, push token and the sign-in account on my server): <strong>Settings → Account &amp; sync → Delete account</strong>. Your progress on the device is kept.</li>
-<li><strong>Without the app</strong>: follow <a href="https://pavesa-es.github.io/pavesa-legal/brio/delete-account/">https://pavesa-es.github.io/pavesa-legal/brio/delete-account/</a></li>
-<li>You can also revoke Brío's access to your Google account at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a></li>
-</ul>
-<h3>Your rights</h3>
-<p>You can ask for access to, correction of, or deletion of your data, or object to its processing, by writing to the contact below. If you are in the EU you may also complain to your data protection authority (in Spain, the AEPD).</p>
+<p>You can export your data to a file and import it again from Settings. The export is created on your device and handed to the app you choose in the Android share sheet (for example, Google Drive or email). From that point the data is governed by that app's own privacy policy.</p>
+<p>Android may also include the app's data in your device's automatic backup to your Google account, depending on your device's backup settings. That backup is managed by Google, not by me.</p>
 <h3>Children</h3>
-<p>Brío is not directed at children under 13. Fires and duels are meant for people aged 13 or over.</p>
+<p>Brío is not directed at children under 13 and does not knowingly collect information from anyone.</p>
+<h3>Data deletion</h3>
+<p>Because the data lives on your device, you control it: use <strong>Settings → Delete everything</strong>, or uninstall the app, to remove it.</p>
 <h3>Changes</h3>
 <p>If this policy changes, the new version will be published at this address with an updated date.</p>
 <h3>Contact</h3>
@@ -100,58 +66,24 @@ footer a{color:var(--muted)}
 <h2 id="es" lang="es">Español</h2>
 <p><strong>Brío</strong> («la app») está desarrollada por Pavesa («yo», «nosotros»). Esta política explica qué hace la app con tu información.</p>
 <h3>En resumen</h3>
-<p>Brío funciona sin conexión y todo lo que escribes se queda en tu dispositivo. No hay anuncios, analíticas ni rastreadores de terceros, y tus datos nunca se venden. Hay dos funciones opcionales que solo funcionan si <strong>inicias sesión con Google</strong>:</p>
-<ul>
-<li><strong>Sincronización</strong>: una copia de tus datos en una carpeta oculta de <strong>tu propio Google Drive</strong>.</li>
-<li><strong>Hogueras y duelos</strong> (retos compartidos con amigos): unos pocos datos en mi servidor para que las personas de una hoguera vean si los demás han hecho su día.</li>
-</ul>
-<p>Si no inicias sesión, nada sale de tu dispositivo.</p>
+<p>Brío funciona sin conexión. <strong>No</strong> recopila, vende ni comparte tus datos personales conmigo ni con nadie. No hay anuncios, analíticas ni rastreadores de terceros. La única función en línea, opcional, es sincronizar a través de tu propio Google Drive (ver más abajo).</p>
 <h3>Lo que se queda en tu dispositivo</h3>
-<p>Todo lo que introduces —tu nombre y avatar, retos, tareas, registros diarios, notas, ánimo, sesiones de enfoque, logros, recompensas y ajustes— se guarda en el almacenamiento privado de la app en tu dispositivo. Las notas, el ánimo y las sesiones de enfoque <strong>nunca</strong> se envían a mi servidor.</p>
+<p>Todo lo que introduces —tu nombre y avatar, retos, tareas, registros diarios, notas, ánimo, sesiones de enfoque, logros y ajustes— se guarda <strong>solo en tu dispositivo</strong>, en el almacenamiento privado de la app. Yo nunca lo recibo.</p>
 <h3>Opcional: inicio de sesión con Google y sincronización con Drive</h3>
-<p>Si eliges <strong>Iniciar sesión con Google</strong> (Ajustes → Cuenta y sincronización), la app pide a Google tu nombre, correo, foto de perfil y acceso a una carpeta oculta, exclusiva de la app, en <strong>tu propio Google Drive</strong> (permiso <code>drive.appdata</code>). Guarda allí una copia de tus retos, registros, perfil, logros y recompensas para mantenerlos sincronizados entre dispositivos. Esa copia vive en tu cuenta de Google, no en mi servidor, y yo no puedo verla. No se puede acceder a ningún otro archivo de Drive.</p>
-<p>El uso y la transferencia a cualquier otra app de la información recibida de las API de Google por parte de Brío cumplirán la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso limitado. Se usa solo para el inicio de sesión, la sincronización y las hogueras; nunca para publicidad, nunca se vende y nunca se comparte más allá de los proveedores indicados abajo.</p>
-<h3>Opcional: hogueras y duelos (retos compartidos)</h3>
-<p>Cuando creas o te unes a una hoguera o a un duelo, la app abre una cuenta en mi servidor con tu inicio de sesión de Google y guarda:</p>
-<ul>
-<li><strong>Cuenta</strong>: un identificador interno y el correo, el nombre y el enlace a la foto de perfil que Google facilita al iniciar sesión. Los demás <strong>nunca</strong> los ven.</li>
-<li><strong>Apodo</strong>: uno aleatorio de una lista fija de palabras (por ejemplo «Brasa Valiente 42»). Es lo único que los demás miembros ven de ti.</li>
-<li><strong>El reto compartido</strong>: su título, emoji, color, duración, calendario y nombres de las tareas, para que otros puedan unirse.</li>
-<li><strong>Registros diarios</strong> solo de ese reto: la fecha, si completaste el día, cuántas tareas hiciste de cuántas y si lo cubrió un escudo de brasas.</li>
-<li><strong>Interacciones</strong>: los toques y sellos de pegatina que envías o recibes, y las personas que bloqueas o denuncias (con el motivo que elijas).</li>
-<li><strong>Para las notificaciones</strong>: el token push de tu dispositivo, tu zona horaria y el idioma de la app, para que los toques y los avisos de «tu hoguera está encendida» lleguen a horas razonables y en tu idioma.</li>
-</ul>
-<p>Los demás miembros de una hoguera ven tu apodo y tus registros de esa hoguera, nada más.</p>
-<h3>Notificaciones</h3>
-<p>Los recordatorios diarios se programan localmente en tu dispositivo. Si estás en una hoguera o un duelo, mi servidor también puede enviarte notificaciones push (un toque, o cuando los demás han encendido la hoguera). Se entregan a través del servicio de notificaciones de Expo y de Google Firebase Cloud Messaging, y solo llevan el título de la hoguera y un mensaje breve.</p>
-<h3>Proveedores y dónde se guardan los datos</h3>
-<ul>
-<li><strong>Supabase</strong> (base de datos e inicio de sesión de hogueras y duelos), alojado en la <strong>Unión Europea (Irlanda)</strong>.</li>
-<li><strong>Expo</strong> (entrega de notificaciones push).</li>
-<li><strong>Google</strong> (inicio de sesión, tu propio Drive y entrega de notificaciones en Android).</li>
-</ul>
-<p>Solo tratan los datos por encargo mío para que estas funciones funcionen. Los datos siempre viajan cifrados (HTTPS).</p>
-<h3>Cuánto tiempo se guardan</h3>
-<p>Los datos de mi servidor se guardan mientras exista tu cuenta. Al salir de una hoguera dejas de compartir registros nuevos; los anteriores siguen visibles para esa hoguera. Si borras tu cuenta se borra todo lo vinculado a ella (ver abajo). Las denuncias que hiciste se borran; las que otros hicieron sobre ti se conservan sin ningún vínculo contigo, solo para prevenir abusos.</p>
+<p>Si eliges <strong>Iniciar sesión con Google</strong> (Ajustes → Cuenta y sincronización), la app pide a Google acceso a una carpeta oculta, exclusiva de la app, en <strong>tu propio Google Drive</strong> (permiso <code>drive.appdata</code>) y guarda allí una copia de tus retos, registros, perfil, logros y recompensas para mantener tus datos sincronizados entre dispositivos. Esa copia vive en tu cuenta de Google, no en ningún servidor mío; yo no puedo verla. La app solo ve el nombre y el correo de tu cuenta de Google para mostrar quién ha iniciado sesión. No se puede acceder a ningún otro archivo de Drive. Puedes <strong>Cerrar sesión</strong> o <strong>Borrar datos de la nube</strong> en cualquier momento desde Ajustes, y también revocar el acceso desde los ajustes de tu cuenta de Google. Si no inicias sesión, nada sale de tu dispositivo.</p>
+<p>El uso y la transferencia a cualquier otra app de la información recibida de las API de Google por parte de Brío cumplirán la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso limitado. Los datos se usan únicamente para ofrecer la sincronización; nunca se usan para publicidad, nunca se venden y nunca se comparten con terceros.</p>
 <h3>Permisos</h3>
 <ul>
-<li><strong>Notificaciones</strong> (Android 13+: <code>POST_NOTIFICATIONS</code>): recordatorios y, si estás en una hoguera, toques. Puedes denegarlo y el resto de la app seguirá funcionando.</li>
-<li><strong>Vibración</strong> (<code>VIBRATE</code>): respuesta háptica. Puedes desactivarla en Ajustes.</li>
-<li><strong>Internet</strong>: sincronización, hogueras y duelos.</li>
+<li><strong>Notificaciones</strong> (Android 13+: <code>POST_NOTIFICATIONS</code>): se usan solo para mostrar los recordatorios diarios que configures. Se programan localmente en tu dispositivo; no interviene ningún servidor. Puedes denegar este permiso y el resto de la app seguirá funcionando.</li>
+<li><strong>Vibración</strong> (<code>VIBRATE</code>): se usa para la respuesta háptica. Puedes desactivarla en Ajustes.</li>
 </ul>
 <h3>Copias de seguridad y exportaciones</h3>
-<p>Puedes exportar tus datos a un archivo e importarlos de nuevo desde Ajustes. La exportación se crea en tu dispositivo y se entrega a la app que elijas en el menú de compartir; a partir de ahí se rige por la política de esa app. Android también puede incluir los datos de la app en la copia de seguridad automática de tu dispositivo en tu cuenta de Google, gestionada por Google.</p>
-<h3>Borrar tus datos y tu cuenta</h3>
-<ul>
-<li><strong>Todo lo de este dispositivo</strong>: Ajustes → Borrar todo, o desinstala la app.</li>
-<li><strong>Tu cuenta</strong> (copia de Drive, hogueras, duelos, apodo, registros, token push y la cuenta de inicio de sesión de mi servidor): <strong>Ajustes → Cuenta y sincronización → Borrar cuenta</strong>. Tu progreso en el dispositivo se conserva.</li>
-<li><strong>Sin la app</strong>: sigue <a href="https://pavesa-es.github.io/pavesa-legal/brio/delete-account/">https://pavesa-es.github.io/pavesa-legal/brio/delete-account/</a></li>
-<li>También puedes retirar el acceso de Brío a tu cuenta de Google en <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a></li>
-</ul>
-<h3>Tus derechos</h3>
-<p>Puedes pedir el acceso, la rectificación o la supresión de tus datos, u oponerte a su tratamiento, escribiendo al contacto de abajo. Si estás en la UE también puedes reclamar ante tu autoridad de protección de datos (en España, la AEPD).</p>
+<p>Puedes exportar tus datos a un archivo e importarlos de nuevo desde Ajustes. La exportación se crea en tu dispositivo y se entrega a la app que elijas en el menú de compartir de Android (por ejemplo, Google Drive o el correo). A partir de ese momento, los datos se rigen por la política de privacidad de esa app.</p>
+<p>Android también puede incluir los datos de la app en la copia de seguridad automática de tu dispositivo en tu cuenta de Google, según los ajustes de copia de tu dispositivo. Esa copia la gestiona Google, no yo.</p>
 <h3>Menores</h3>
-<p>Brío no está dirigida a menores de 13 años. Las hogueras y los duelos están pensados para mayores de 13 años.</p>
+<p>Brío no está dirigida a menores de 13 años y no recopila información de nadie de forma consciente.</p>
+<h3>Eliminación de datos</h3>
+<p>Como los datos viven en tu dispositivo, tú los controlas: usa <strong>Ajustes → Borrar todo</strong> o desinstala la app para eliminarlos.</p>
 <h3>Cambios</h3>
 <p>Si esta política cambia, la nueva versión se publicará en esta dirección con la fecha actualizada.</p>
 <h3>Contacto</h3>
