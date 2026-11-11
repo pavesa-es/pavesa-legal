@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brío</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Brío">
+<meta property="og:description" content="Te invitan a un reto compartido. / You are invited to a shared challenge.">
+<meta property="og:image" content="https://brio.joancabrera.es/brio/icon.png">
+<link rel="icon" href="../favicon.png">
+<style>
+:root{--bg:#fbf7f2;--fg:#1d1522;--muted:#6b5e72;--line:#e6dcd3;--accent:#e8521c}
+@media (prefers-color-scheme:dark){:root{--bg:#0d0813;--fg:#f6ece3;--muted:#b3a5ba;--line:#2a1f33;--accent:#ff8a4d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+h1{font-size:2rem;line-height:1.2;margin:.2em 0 .3em;letter-spacing:-.02em}
+h2{font-size:1.5rem;margin:2.2em 0 .4em;padding-top:.4em;border-top:1px solid var(--line)}
+h3{font-size:1.1rem;margin:1.6em 0 .2em}
+p,li{margin:.5em 0}
+ul{padding-left:1.3em}
+a{color:var(--accent)}
+code{font:.9em ui-monospace,Menlo,monospace;background:var(--line);padding:.1em .35em;border-radius:5px}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.top{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.top a{color:var(--muted)}
+footer{margin-top:3em;color:var(--muted);font-size:.9rem}
+footer a{color:var(--muted)}
+.hero{display:flex;gap:18px;align-items:center;margin:.4em 0 1em}
+.hero img{width:88px;height:88px;border-radius:22px;flex:none}
+.hero h1{margin:0}
+.lead{font-size:1.15rem}
+.links{display:flex;gap:10px 18px;flex-wrap:wrap;margin:1.2em 0}
+
+.card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding-top:24px}
+.card img{width:96px;height:96px;border-radius:24px}
+.card h1{font-size:1.7rem;margin:.6em 0 0}
+.card p{margin:.2em 0;color:var(--muted)}
+.code{font:700 2.1rem/1.2 ui-monospace,Menlo,monospace;letter-spacing:.14em;margin:.5em 0 .1em;user-select:all;color:var(--fg)}
+.label{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.btn{display:block;width:100%;max-width:360px;margin:1.4em auto .6em;padding:16px 20px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none}
+.small{font-size:.95rem}
+</style>
+</head>
+<body>
+<main class="card">
+<img src="../brio/icon.png" alt="">
+<h1 id="title"></h1>
+<p id="lead"></p>
+<div id="ok" hidden>
+<div class="code" id="code"></div>
+<div class="label" id="label"></div>
+<a class="btn" id="open" href="#"></a>
+<p class="small" id="hand"></p>
+</div>
+<p id="invalid" hidden></p>
+<p class="small"><a id="get" href="https://play.google.com/store/apps/details?id=es.pavesa.brio"></a></p>
+<footer>© Pavesa</footer>
+</main>
+<script>
+(function () {
+  var KIND = "join";
+  var TEXT = {"en":{"title":"Join a fire on Brío","lead":"You are invited to a shared challenge.","label":"Invite code","hand":"You can also enter the code in Friends → Join with a code."},"es":{"title":"Únete a una hoguera en Brío","lead":"Te invitan a un reto compartido.","label":"Código de invitación","hand":"También puedes escribir el código en Amigos → Unirme con un código."}};
+  var COMMON = {"en":{"open":"Open in Brío","get":"Don’t have Brío yet? Get it on Google Play","invalid":"This link is not complete. Ask your friend to send it again."},"es":{"open":"Abrir en Brío","get":"¿Aún no tienes Brío? Descárgala en Google Play","invalid":"Este enlace está incompleto. Pide a tu amigo que te lo vuelva a enviar."}};
+  var lang = /^es\b/i.test(navigator.language || '') ? 'es' : 'en';
+  document.documentElement.lang = lang;
+  var t = TEXT[lang], c = COMMON[lang];
+  var set = function (id, text) { document.getElementById(id).textContent = text; };
+  set('title', t.title); set('lead', t.lead); set('get', c.get);
+  var code = decodeURIComponent(location.hash.slice(1)).replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+  if (!/^[A-Z0-9]{4,12}$/.test(code)) { set('invalid', c.invalid); document.getElementById('invalid').hidden = false; return; }
+  set('code', KIND === 'friend' && code.length === 8 ? code.slice(0, 4) + '-' + code.slice(4) : code);
+  set('label', t.label); set('hand', t.hand); set('open', c.open);
+  document.getElementById('ok').hidden = false;
+  var android = /android/i.test(navigator.userAgent);
+  var intent = 'intent://' + KIND + '/' + code + '#Intent;scheme=brio;package=es.pavesa.brio;';
+  var link = document.getElementById('open');
+  link.href = android ? intent + 'S.browser_fallback_url=' + encodeURIComponent("https://play.google.com/store/apps/details?id=es.pavesa.brio") + ';end' : 'brio://' + KIND + '/' + code;
+  // Android: try to open the app right away (no store fallback here: without the app the page simply stays)
+  if (android) location.href = intent + 'end';
+})();
+</script>
+</body>
+</html>
